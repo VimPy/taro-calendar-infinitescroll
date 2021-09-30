@@ -1,0 +1,46 @@
+@mixin display-flex {
+  display: flex;
+}
+
+@mixin align-items($value: stretch) {
+  align-items: $value;
+  @if $value == flex-start {
+    -webkit-box-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+  } @else {
+    -webkit-box-align: $value;
+  }
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  flex: $fg $fs $fb;
+  -webkit-box-flex: $fg;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  flex-wrap: $value;
+}
+
+@mixin justify-content($value: flex-start) {
+  justify-content: $value;
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+  } @else {
+    -webkit-box-pack: $value;
+  }
+}
+
+@mixin fontStyle($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+@mixin widthHeight($w, $h) {
+  width: $w;
+  height: $h;
+}
